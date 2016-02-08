@@ -1,3 +1,4 @@
+execute pathogen#infect()
 inoremap jk <ESC>
 let mapleader = "\<Space>"
 set nu
@@ -5,7 +6,6 @@ filetype plugin indent on
 syntax on
 colorscheme vendetta
 set encoding=utf-8
-execute pathogen#infect()
 
 " set tabs to have 2 spaces
 set ts=2
@@ -50,3 +50,10 @@ nnoremap <C-U> :call SmoothScroll(1)<Enter>
 nnoremap <C-D> :call SmoothScroll(0)<Enter>
 inoremap <C-U> <Esc>:call SmoothScroll(1)<Enter>i
 inoremap <C-D> <Esc>:call SmoothScroll(0)<Enter>i
+
+"" Start NERDTree
+"autocmd VimEnter * NERDTree /Users/daiweifan/src
+"" Jump to the main window.
+"autocmd VimEnter * wincmd p
+
+let g:nerdtree_tabs_open_on_console_startup=1
