@@ -2,6 +2,7 @@ execute pathogen#infect()
 inoremap jk <ESC>
 let mapleader = "\<Space>"
 set nu
+set showcmd
 filetype plugin indent on
 syntax on
 colorscheme vendetta
@@ -24,6 +25,8 @@ set cursorline
 
 " show the matching part of the pair for [] {} and ()
 set showmatch
+
+set hlsearch
 
 " enable all Python syntax highlighting features
 let python_highlight_all = 1
@@ -51,9 +54,18 @@ nnoremap <C-D> :call SmoothScroll(0)<Enter>
 inoremap <C-U> <Esc>:call SmoothScroll(1)<Enter>i
 inoremap <C-D> <Esc>:call SmoothScroll(0)<Enter>i
 
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-l> :nohl<CR><C-l>
+
 "" Start NERDTree
 "autocmd VimEnter * NERDTree /Users/daiweifan/src
 "" Jump to the main window.
 "autocmd VimEnter * wincmd p
 
+" NERDTree settings
 let g:nerdtree_tabs_open_on_console_startup=1
+nmap <leader>nt :NERDTree py<cr>
+let NERDTreeIgnore = ['\.pyc$']
+
+" Highlight variable under cursor
+:autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
