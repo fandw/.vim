@@ -13,6 +13,9 @@ set nu
 " Show command queue
 set showcmd
 
+" Set initial window size
+set lines=55 columns=180
+
 filetype plugin indent on
 
 " Show syntax
@@ -25,7 +28,7 @@ colorscheme darcula
 set encoding=utf-8
 
 " Font and size
-set guifont=Source\ Code\ Pro:h14
+set guifont=Source\ Code\ Pro\ Medium\ 12
 
 " set tabs to have 2 spaces
 set ts=2
@@ -83,4 +86,4 @@ nmap <leader>nt :NERDTree py<cr>
 let NERDTreeIgnore = ['\.pyc$']
 
 " Highlight variable under cursor
-:autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+" :autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
