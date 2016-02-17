@@ -28,7 +28,7 @@ colorscheme darcula
 set encoding=utf-8
 
 " Font and size
-set guifont=Source\ Code\ Pro\ Medium\ 13
+set guifont=Source\ Code\ Pro:h14
 
 " set tabs to have 2 spaces
 set ts=2
