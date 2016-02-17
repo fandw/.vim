@@ -14,7 +14,7 @@ set nu
 set showcmd
 
 " Set initial window size
-set lines=55 columns=180
+" set lines=55 columns=180
 
 filetype plugin indent on
 
@@ -28,7 +28,7 @@ colorscheme darcula
 set encoding=utf-8
 
 " Font and size
-set guifont=Source\ Code\ Pro\ Medium\ 12
+set guifont=Source\ Code\ Pro\ Medium\ 13
 
 " set tabs to have 2 spaces
 set ts=2
