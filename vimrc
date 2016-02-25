@@ -32,6 +32,7 @@ set guifont=Source\ Code\ Pro:h14
 
 " set tabs to have 2 spaces
 set ts=2
+set tabstop=2
 
 " indent when moving to the next line while writing code
 set autoindent
@@ -108,8 +109,17 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 " NERDTree settings
 let g:nerdtree_tabs_open_on_console_startup=1
-nmap <leader>nt :NERDTree py<cr>
+nmap <leader>nt :NERDTree<Space>
+nmap <leader>bk :Bookmark<Space>
+nmap <leader>hp :help<Space>nerd_tree.txt<cr>
+nmap <leader>tg :NERDTreeToggle<cr>
 let NERDTreeIgnore = ['\.pyc$']
 
-" Highlight variable under cursor
-" :autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
