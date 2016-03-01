@@ -28,7 +28,11 @@ colorscheme darcula
 set encoding=utf-8
 
 " Font and size
-set guifont=Source\ Code\ Pro:h14
+if has('macunix')
+    set guifont=Source\ Code\ Pro:h14
+else
+    set guifont=Source\ Code\ Pro\ Medium\ 12
+endif
 
 " set tabs to have 2 spaces
 set ts=2
