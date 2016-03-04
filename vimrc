@@ -112,7 +112,6 @@ call AutoHighlightToggle()
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 " NERDTree settings
-let g:nerdtree_tabs_open_on_console_startup=1
 nmap <leader>nt :NERDTree<Space>
 nmap <leader>bk :Bookmark<Space>
 nmap <leader>hp :help<Space>nerd_tree.txt<cr>
