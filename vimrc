@@ -13,9 +13,6 @@ set nu
 " Show command queue
 set showcmd
 
-" Set initial window size
-" set lines=55 columns=180
-
 filetype plugin indent on
 
 " Show syntax
@@ -36,7 +33,6 @@ endif
 
 " set tabs to have 2 spaces
 set ts=2
-set tabstop=2
 
 " indent when moving to the next line while writing code
 set autoindent
@@ -55,6 +51,9 @@ set showmatch
 
 " Highlight search
 set hlsearch
+
+" Auto reload files
+set autoread
 
 " enable all Python syntax highlighting features
 let python_highlight_all = 1
