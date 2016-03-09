@@ -59,6 +59,34 @@ set hlsearch
 " enable all Python syntax highlighting features
 let python_highlight_all = 1
 
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-l> :nohl<CR><C-l>
+
+" NERDTree settings
+nmap <leader>nt :NERDTree<Space>
+nmap <leader>bk :Bookmark<Space>
+nmap <leader>hp :help<Space>nerd_tree.txt<cr>
+nmap <leader>tg :NERDTreeToggle<cr>
+let NERDTreeIgnore = ['\.pyc$']
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+" Ctrlp
+let g:ctrlp_map = '<c-p>'"
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:20'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_max_depth = 40
+let g:ctrlp_max_files = 0
+let g:ctrlp_by_filename = 1
+let g:ctrlp_switch_buffer = 'Et'
+
 " SmoothScroll for ctrl + U/D
 function SmoothScroll(up)
     if a:up
@@ -105,24 +133,7 @@ function! AutoHighlightToggle()
   endif
 endfunction
 
-"Start with highlighting on
-call AutoHighlightToggle()
-
-" <Ctrl-l> redraws the screen and removes any search highlighting.
-nnoremap <silent> <C-l> :nohl<CR><C-l>
-
-" NERDTree settings
-nmap <leader>nt :NERDTree<Space>
-nmap <leader>bk :Bookmark<Space>
-nmap <leader>hp :help<Space>nerd_tree.txt<cr>
-nmap <leader>tg :NERDTreeToggle<cr>
-let NERDTreeIgnore = ['\.pyc$']
-
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
+" Macros recorded
+" @c block comment lines
+" @v paste from os clipboard
+" @u block uncomment lines
