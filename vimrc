@@ -55,6 +55,11 @@ set hlsearch
 " Auto reload files
 set autoread
 
+" Draw an 80 column line
+set textwidth=80
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
 " enable all Python syntax highlighting features
 let python_highlight_all = 1
 
@@ -83,7 +88,7 @@ let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:20'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_max_depth = 40
 let g:ctrlp_max_files = 0
-let g:ctrlp_by_filename = 1
+" let g:ctrlp_by_filename = 1
 let g:ctrlp_switch_buffer = 'Et'
 
 " SmoothScroll for ctrl + U/D
