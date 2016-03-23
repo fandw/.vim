@@ -90,6 +90,8 @@ let g:ctrlp_max_depth = 40
 let g:ctrlp_max_files = 0
 " let g:ctrlp_by_filename = 1
 let g:ctrlp_switch_buffer = 'Et'
+" Jedi-vim
+let g:jedi#auto_initialization = 0
 
 " SmoothScroll for ctrl + U/D
 function SmoothScroll(up)
