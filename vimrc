@@ -56,12 +56,20 @@ set hlsearch
 set autoread
 
 " Draw an 80 column line
-set textwidth=80
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+set colorcolumn=81
+" set textwidth=80
+" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+" match OverLength /\%81v.\+/
 
 " enable all Python syntax highlighting features
-let python_highlight_all = 1
+" let python_highlight_all = 1
+
+" YMC settings
+highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
+" Move up and down in autocomplete with <c-j> and <c-k>
+inoremap <expr> <c-j> ("\<C-n>")
+inoremap <expr> <c-k> ("\<C-p>")
+let g:ycm_auto_trigger = 0
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
@@ -92,6 +100,8 @@ let g:ctrlp_max_files = 0
 let g:ctrlp_switch_buffer = 'Et'
 " Jedi-vim
 let g:jedi#auto_initialization = 0
+" Syntastics
+let g:syntastic_quiet_messages = { "type": "style" }
 
 " SmoothScroll for ctrl + U/D
 function SmoothScroll(up)
