@@ -27,6 +27,10 @@ set encoding=utf-8
 " Font and size
 if has('macunix')
     set guifont=Source\ Code\ Pro:h14
+elseif has('win32')
+    set guifont=Source_Code_Pro:h12:cANSI
+    source $VIMRUNTIME/mswin.vim
+    let g:loaded_youcompleteme = 1
 else
     set guifont=Source\ Code\ Pro\ Medium\ 12
 endif
@@ -37,6 +41,9 @@ set sw=2
 
 " indent when moving to the next line while writing code
 set autoindent
+
+" Fix backspace not working
+set backspace=indent,eol,start
 
 " expand tabs into spaces
 set expandtab
