@@ -31,13 +31,15 @@ elseif has('win32')
     set guifont=Source_Code_Pro:h12:cANSI
     source $VIMRUNTIME/mswin.vim
     let g:loaded_youcompleteme = 1
+    set guioptions-=m  "remove menu bar
+    set guioptions-=T  "remove toolbar
 else
     set guifont=Source\ Code\ Pro\ Medium\ 12
 endif
 
 " set tabs to have 2 spaces
-set ts=2
-set sw=2
+set ts=4
+set sw=4
 
 " indent when moving to the next line while writing code
 set autoindent
@@ -49,7 +51,7 @@ set backspace=indent,eol,start
 set expandtab
 
 " when using the >> or << commands, shift lines by 4 spaces
-set shiftwidth=2
+set shiftwidth=4
 
 " show a visual line under the cursor's current line
 set cursorline
