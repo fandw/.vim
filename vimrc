@@ -29,7 +29,7 @@ if has('macunix')
     set guifont=Source\ Code\ Pro:h14
 elseif has('win32')
     set guifont=Source_Code_Pro:h12:cANSI
-    source $VIMRUNTIME/mswin.vim
+    " source $VIMRUNTIME/mswin.vim
     let g:loaded_youcompleteme = 1
     set guioptions-=m  "remove menu bar
     set guioptions-=T  "remove toolbar
